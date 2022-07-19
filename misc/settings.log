@@ -1,0 +1,16 @@
+range
+9
+delay
+-1
+countdown
+1
+animation
+1
+earned
+50
+spin
+28
+
+----------------------------------------------------------------------
+Modifying this file can cause an error when opening Flutter-Spin.py
+So don't modify this unless you know what this thing is...      :p
