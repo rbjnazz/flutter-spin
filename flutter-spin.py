@@ -673,13 +673,15 @@ def typing_anim(load):
     for char in string:
         if UserSpinDelay.self == -1:
             sleep(default_delay)
+            print(string)
         else:
             sleep(user_delay)
+            print(string)
 
 
 def instruction():
-    clear_terminal()
-    info.instruction(Bucks.self, UserNumRange.self)
+    #clear_terminal()
+    #info.instruction(Bucks.self, UserNumRange.self)
     clear_terminal()
     print(info.instruction(Bucks.self, UserNumRange.self))
     user = input(PRESS_ENTER)
@@ -830,7 +832,7 @@ def quit_prompt():
 
 def jackpot():  # when you hit it. This is the message :D
     sleep(TIME)
-    typing_anim(jack.message)
+    typing_anim(jack.jackpot())
     quit_continue()
 
 
