@@ -680,8 +680,6 @@ def typing_anim(load):
 
 
 def instruction():
-    #clear_terminal()
-    #info.instruction(Bucks.self, UserNumRange.self)
     clear_terminal()
     print(info.instruction(Bucks.self, UserNumRange.self))
     user = input(PRESS_ENTER)
