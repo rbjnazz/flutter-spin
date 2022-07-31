@@ -542,7 +542,7 @@ class LogReport:
         log_result = f'''
         \t{LINES[3:]}
         Spin {gen.turn:02} {spin_dash * "-"} │ {gen.num_a} │ {gen.num_b} │ {gen.num_c} │
-        Selected number {9 * "-"} │     {UserBet.self}     │ 
+        Selected number {9 * "-"} │     {UserBet.self}     │
         Spin result {13 * "-"} │ {res[ResultAnim.spin_indicator]} │
         Bet result {14 * "-"} │ {res[Bucks.result_indicator]} │
         Cash {20 * "-"} │   ${Bucks.self}{credit_space}│ {wr}
@@ -614,7 +614,8 @@ def main_menu():
     user_init = input(info.main_menu_inst())
     if user_init.upper() == 'Q':
         print('\n\tClosing...')
-        sleep(1.5)
+        save_settings()
+        sleep(1)
         exit()
     elif user_init == '':
         clear_terminal()
@@ -669,14 +670,16 @@ def typing_anim(load):
     string = load
     default_delay = NumGenerator.random_time  # sys.stdout ignore the 20 digit float
     user_delay = UserSpinDelay.self
+    x = 8
 
-    for char in string:
+    while x != 0:
         if UserSpinDelay.self == -1:
             sleep(default_delay)
             print(string)
         else:
             sleep(user_delay)
             print(string)
+        x -= 1
 
 
 def instruction():
@@ -714,7 +717,7 @@ def save_settings():  # user settings
     print('\n\tSaving...')
     sleep(1.5)
     clear_terminal()
-    advance_settings()
+    #advance_settings()
 
 
 def load_settings():  # this will always load saved user settings
